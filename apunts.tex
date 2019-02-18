@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage[catalan]{babel}
+\selectlanguage{catalan}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\title{DSBM}
+\author{David Soldevila}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\section{Introducció}
+
+\subsection{Embedded system}
+
+\begin{itemize}
+	\item Funció espedífica
+	\item Part d'un sistema més ampli
+	\item Basats en micros
+	\item Hadware limitat
+	\item Qualitat i fiabilitat elevats
+	\item Adequat per sistemes a temps real
+\end{itemize}
+
+\pagebreak
+
+\section{Repàs de conceptes electrònics}
+
+\subsection{Generadors}
+
+\begin{itemize}
+	\item Generació de tensió alterna
+	\begin{itemize}
+		\item Xarxa elèctrica, dinamo.
+	\end{itemize}
+	\item Generació de tensió continua
+	\begin{itemize}
+		 \item Bateries, piles, cel·les fotoelèctriques, fonts d'alimentació...
+	\end{itemize}
+\end{itemize}
+
+\subsection{Conductors i aïllants}
+
+Conductor: material que oposa pocs resitència al pas de corrent.
+
+Aïllant: material que s'oposa al pas de la corrent.
+
+Semiconductors: material que està entre conductors i aïllants i que permet controlar la conductivitat mitjançant l'adició dimpreses p(+) i N(-).
+
+\subsection{Dispositius passius}
+
+\begin{itemize}
+	\item Resistències
+
+$R = \frac{Va - Vb}{I}$
+
+	\item Condensadors
+
+$I_c = C \frac{dv_c}{dt}$; $V_c = \frac{1}{C} \int I_c dt$
+	\begin{itemize}
+		\item S'oposa a canvis ràpids de la tensió.
+		\item Subministra corrent sense variar al sensivilitat.
+		\item La impedància disminueix en funció de la freqüència.
+	\end{itemize}
+	\item Inductàncies
+
+$V_l = -L \frac{dI_l}{dt}$: $I_c = \frac{1}{L} \int V_l dt$
+
+	\begin{itemize}
+		\item S'oposa als canvis ràpids de corrent.
+		\item Subministra pics de tensio.
+		\item La impedància augmenta en funció de la freqüència.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Lleis de kirchoff}
+	\begin{itemize}
+		\item Malla: Elemets d'un circuit connectats formant un llaç tencat.
+
+$\sum_0^nV_i = 0 \Rightarrow V_{cc} = V_1 + V_2 + V_3 + ... V_n$
+
+		\item Node: punt d'un circuit on es connecten dos o més elements.
+	\end{itemize}
+
+$\sum_0^nI_i = 0 \Rightarrow I_{in} = I_{out}$
+
+\subsection{Ciucuit RC}
+
+Composat per un generador i una Resistència.
+
+\subsection{Càrrega i descàrrega d'un condensador}
+
+$\tau$ és el component temporal que depen del producte RC.
+
+$V_c(t) = V_{cc}(1-e^(\frac{-t}{RC}))$
+
+\subsection{Diode}
+
+Permet la circulació de corrent en només un sentit.
+
+$V_d > V_f \Rightarrow On (I_f \neq 0)$
+
+$V_d < V_f \Rightarrow Off (I_f = 0)$
+
+Funcions:
+\begin{itemize}
+	\item Rectificadors
+	\item Retalladors
+	\item Protecció
+\end{itemize}
+
+\subsubsection{Diode Zenner}
+
+A partir d'una certa tensio negativa (llindà de ruptura) deixa passar el corrent.
+
+$|V_d| > |V_z| \Rightarrow On (I_f \neq 0)$
+
+$|V_d| < |V_z| \Rightarrow Off (I_f = 0)$
+
+\end{document}
